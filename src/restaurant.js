@@ -93,6 +93,37 @@
 // - retornará o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (abc) => {
+  const a = {
+    fetchMenu: () => abc,
+    consumption: [],
+    order: (x) => a.consumption.push(x),
+    pay() { const prices = Object.assign(abc.food, abc.drink); return a.consumption.reduce((b, c) => b + prices[c], 0); },
+  };
+  return a;
+};
 
 module.exports = createMenu;
+
+// const objetoRetornado4 = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+// objetoRetornado4.order('coxinha');
+// objetoRetornado4.order('coxinha');
+// objetoRetornado4.order('agua');
+// console.log(objetoRetornado4.fetchMenu().food);
+// console.log(objetoRetornado4.fetchMenu().drink);
+// const test = Object.assign(objetoRetornado4.fetchMenu().food, objetoRetornado4.fetchMenu().drink);
+// console.log(test);
+// const test2 = objetoRetornado4.consumption.reduce((a, b) => a + test[b], 0);
+// console.log(test2);
+
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+// const array1 = ['a', 'a', 'c', 'b'];
+// const arr = { a: 1, b: 4, c: 5 };
+
+// const sumWithInitial = array1.reduce(
+//   (a, b) => a + arr[b], 0,
+//   );
+
+// console.log(sumWithInitial);
