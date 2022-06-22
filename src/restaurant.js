@@ -100,7 +100,7 @@ const createMenu = (m) => {
     order: (x) => a.consumption.push(x),
     pay() { 
       const p = Object.assign(m.food, m.drink); 
-      return a.consumption.reduce((b, c) => b + p[c], 0); 
+      return (a.consumption.reduce((b, c) => b + p[c], 0) * 1.1); 
     },
   };
   return a;
@@ -116,7 +116,7 @@ module.exports = createMenu;
 // console.log(objetoRetornado4.fetchMenu().drink);
 // const test = Object.assign(objetoRetornado4.fetchMenu().food, objetoRetornado4.fetchMenu().drink);
 // console.log(test);
-// const test2 = objetoRetornado4.consumption.reduce((a, b) => a + test[b], 0);
+// const test2 = (objetoRetornado4.consumption.reduce((a, b) => a + test[b], 0) * 1.1);
 // console.log(test2);
 
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
